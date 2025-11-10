@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">  
+    <title>Document</title>
+</head>
+<body>
+    <form name="submit-to-google-sheet" id="submit-to-google-sheet" method="post">
+    <h1>Pengumpulan Lokasi Kerja</h1>
+
+    <!-- Nama -->
+    <div class="nama form-field">
+    
+      <select id="nama" name="Nama" placeholder='nama' required>
+        <option value=""> </option> 
+        <option value="">Ricardo</option> 
+        <option value="">Budi</option> 
+        <option value="">Putra</option> 
+      </select> 
+       <label>Nama</label>
+    </div>
+
+    <!-- Tim -->
+    <div class="form-field">
+    
+    <select name="tim" id="Tim" required>
+      <option value=""></option>
+      <option value="Devs">Dev Team</option>
+   
+      <option value="Marketing">Marketing</option>
+    </select><label>Tim / Divisi</label>
+    </div>
+    <!-- Lokasi Kerja -->
+     
+    <div id="lokasi-kerja-field" class="form-field hidden"> 
+      
+     <select name="Lokasi_Kerja" > 
+        <option value="">Pilih Lokasi Kerja</option>
+        <option value="Bengkong">Bengkong</option>
+        <option value="Nagoya">Nagoya</option>
+        <option value="Lubuk Baja">Lubuk Baja</option>
+        <option value="Sei">Sei Beduk</option>
+      </select><label>Lokasi Kerja</label>
+    </div>
+   <div class="form-field">   
+    
+    <select name="status" required>
+      <option value="">   </option>
+      <option value="In Progress">In Progress</option>
+      <option value="Done">Done</option>
+      <option value="Problem">Problem / Blocked</option>
+    </select> <label>Status </label>
+     </div>
+      
+    <!-- Lokasi -->
+    <div id="geo-lokasi-field" class="form-field hidden" >
+   
+      <select id="lokasi-select" name="Lokasi">
+        <option value=""> </option>
+      </select>      <label>Lokasi</label>
+   <button id="get-location" type="button">📍 Kirim Lokasi</button>
+    </div>
+    
+   <!-- CAMERA -->
+    <div id="camera-field"   class="hidden "  >
+    <video id="video" autoplay playsinline  > </video>
+    <canvas id="canvas" style="display:none;"></canvas>
+      <div class="tombol-kamera hidden" id="tombol-kamera">
+        <label id="label-kamera">Kamera</label> 
+        <div class="toggle" id="toggle">
+          <input type="checkbox" id="switch">
+          <label for="switch" class="tog"> </label>
+        </div>
+      </div>
+    <img id="photo-preview" alt="Tidak ada Foto " style="display:none; width:100%; border-radius:8px; margin-top:10px;">
+    <button type="button" id="capture" class="hidden">Ambil Foto</button>
+    <input type="hidden" name="Foto" id="photo-input" />
+    </div>
+ 
+    <div class="text-center">
+      <button type="submit" class="submit-btn">
+        <p>Kirim</p> </button>
+    </div>
+
+  </form>
+ 
+ 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="formscript.js"></script>
+</body>
+</html>
